@@ -50,7 +50,13 @@ Point at an explicit binary (recommended if you don't bundle one in `bin/`):
 ```jsonc
 "lsp": {
   "vue-tsgo": {
-    "binary": { "path": "/absolute/path/to/tsgo" }
+    "binary": {
+      "path": "/absolute/path/to/tsgo",
+      // Required when `path` is set: Zed replaces the extension's built-in args
+      // with these, so without them the binary runs as the tsc CLI (no LSP) and
+      // exits immediately ("server shut down").
+      "arguments": ["--lsp", "--stdio"]
+    }
   }
 }
 ```
