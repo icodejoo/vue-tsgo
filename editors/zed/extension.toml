@@ -1,0 +1,15 @@
+id = "vue-tsgo"
+name = "Vue (vue-tsgo)"
+description = "Vue 3 support powered by vue-tsgo — a fast native (Go) language server. Drop-in replacement for the Volar-based Vue extension."
+version = "0.1.0"
+schema_version = 1
+authors = ["icodejoo"]
+
+[language_servers.vue-tsgo]
+name = "vue-tsgo"
+language = "Vue.js"
+language_ids = { "Vue.js" = "vue" }
+
+[grammars.vue]
+repository = "https://github.com/tree-sitter-grammars/tree-sitter-vue"
+commit = "7e48557b903a9db9c38cea3b7839ef7e1f36c693"
