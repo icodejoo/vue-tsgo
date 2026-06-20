@@ -1,14 +1,17 @@
 id = "vue-tsgo"
 name = "Vue (vue-tsgo)"
-description = "Vue 3 support powered by vue-tsgo — a fast native (Go) language server. Drop-in replacement for the Volar-based Vue extension."
-version = "0.1.0"
+description = "Vue 3 + TypeScript support powered by vue-tsgo — a fast native (Go) language server for .vue and .ts/.tsx. Replaces the Volar-based Vue extension and a standalone tsgo."
+version = "0.2.0"
 schema_version = 1
 authors = ["icodejoo"]
 
+# vue-tsgo is a typescript-go fork, so one server can handle both .vue and
+# plain TS/JS. Serving them all from a single LSP gives consistent, TS7-fast
+# type-checking across the whole project (no separate tsgo extension needed).
 [language_servers.vue-tsgo]
 name = "vue-tsgo"
-language = "Vue.js"
-language_ids = { "Vue.js" = "vue" }
+languages = ["Vue.js", "TypeScript", "TSX", "JavaScript", "JSX"]
+language_ids = { "Vue.js" = "vue", "TypeScript" = "typescript", "TSX" = "typescriptreact", "JavaScript" = "javascript", "JSX" = "javascriptreact" }
 
 [grammars.vue]
 repository = "https://github.com/tree-sitter-grammars/tree-sitter-vue"
